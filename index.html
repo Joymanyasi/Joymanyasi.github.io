@@ -5,56 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joy Manyasi Kabaka | Molecular Biologist & NGS Consultant</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #fafbfc;
+        :root {
+            --primary: #0f62fe; /* Vibrant Science Blue */
+            --secondary: #007d7e; /* Deep Genomics Teal */
+            --accent: #d85c27; /* Warm Amber for Narrative/Kienyeji */
+            --bg: #f4f7f6; /* Soft Slate Mint White */
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-muted: #495057;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #0366d6; }
-        h2 { font-size: 1.8rem; border-bottom: 1px solid #e1e4e8; padding-bottom: 0.3rem; margin-top: 2rem; }
-        h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-        p { margin-top: 0; margin-bottom: 1rem; }
-        .subtitle { font-size: 1.2rem; color: #586069; font-weight: 500; margin-bottom: 1.5rem; }
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.75rem; }
-        strong { color: #111; }
-        hr { border: 0; border-top: 1px solid #e1e4e8; margin: 2rem 0; }
-        .contact { background: #f1f8ff; padding: 1rem; border-radius: 6px; border: 1px solid #c8e1ff; text-align: center; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-band {
+            background: linear-gradient(135deg, var(--secondary) 0%, #064e4f 100%);
+            color: white;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .header-band h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header-band .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+
+        .header-band .location {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .section-card.benchmarking {
+            border-left-color: var(--primary);
+        }
+
+        .section-card.creative {
+            border-left-color: var(--accent);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .secondary-title { color: var(--secondary); }
+        .primary-title { color: var(--primary); }
+        .accent-title { color: var(--accent); }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        .benchmarking li::before { color: var(--primary); }
+        .creative li::before { color: var(--accent); }
+
+        strong {
+            color: #000;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .badge {
+            background-color: #fff3cd;
+            color: #856404;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+            border: 1px solid #ffeeba;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #f1f8ff 0%, #e6f4ea 100%);
+            border: 1px solid #d0e3ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .contact-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
     </style>
 </head>
 <body>
 
-    <h1>Joy Manyasi Kabaka 👋</h1>
-    <div class="subtitle">Molecular Biologist & Operational NGS Workflow Consultant</div>
-    <p>📍 Nairobi, Kenya</p>
+    <div class="header-band">
+        <h1>Joy Manyasi Kabaka 👋</h1>
+        <div class="subtitle">Molecular Biologist & Operational NGS Workflow Consultant</div>
+        <div class="location">📍 Nairobi, Kenya</div>
+    </div>
 
-    <hr>
+    <div class="container">
 
-    <h2>🧬 Genomics Intelligence & Ecosystem Strategy</h2>
-    <ul>
-        <li><strong>Sequence Africa:</strong> Narrating the African genomics story by tracking sequencing facilities, mapping laboratory operational challenges, and documenting clinical genomics adoption across the continent.</li>
-        <li><strong>NGS Hub:</strong> An open-access repository focused on scenario-based genomics workflows and infrastructure literacy assets, designed to help African clinical and research trainees master wet-to-dry lab transitions.</li>
-    </ul>
+        <div class="section-card">
+            <h2 class="secondary-title">🧬 Genomics Intelligence & Ecosystem Strategy</h2>
+            <ul>
+                <li>
+                    <strong>Sequence Africa</strong>
+                    <p class="project-desc">Narrating the African genomics story by tracking sequencing facilities, mapping laboratory operational challenges, and documenting clinical genomics adoption across the continent.</p>
+                </li>
+                <li>
+                    <strong>NGS Hub</strong>
+                    <p class="project-desc">An open-access repository focused on scenario-based genomics workflows and infrastructure literacy assets, designed to help African clinical and research trainees master wet-to-dry lab transitions.</p>
+                </li>
+            </ul>
+        </div>
 
-    <h2>🔬 Benchmarking & Frameworks (Under Review)</h2>
-    <ul>
-        <li><strong>Terminal-Bench Science Proposal:</strong> <em>“Benchmarking Reproducible Somatic Variant Interpretation Pipelines for Triple-Negative Breast Cancer in East African Populations.”</em> A comprehensive validation framework measuring how accurately frontier AI systems reproduce and interpret localized clinical oncology variants.</li>
-    </ul>
+        <div class="section-card benchmarking">
+            <h2 class="primary-title">🔬 Benchmarking & Frameworks <span class="badge">Under Review</span></h2>
+            <ul>
+                <li>
+                    <strong>Terminal-Bench Science Proposal</strong>
+                    <p class="project-desc"><em>“Benchmarking Reproducible Somatic Variant Interpretation Pipelines for Triple-Negative Breast Cancer in East African Populations.”</em> A comprehensive validation framework measuring how accurately frontier AI systems reproduce and interpret localized clinical oncology variants.</p>
+                </li>
+            </ul>
+        </div>
 
-    <h2>🎬 Creative Science Communication</h2>
-    <ul>
-        <li><strong>The Guardians of the Kienyeji Chicken:</strong> A short film project exploring indigenous genetic resource preservation, tracking the cellular characterization, tissue logistics, and organoid optimization of native poultry breeds.</li>
-    </ul>
+        <div class="section-card creative">
+            <h2 class="accent-title">🎬 Creative Science Communication</h2>
+            <ul>
+                <li>
+                    <strong>The Guardians of the Kienyeji Chicken</strong>
+                    <p class="project-desc">A short film project exploring indigenous genetic resource preservation, tracking the cellular characterization, tissue logistics, and organoid optimization of native poultry breeds.</p>
+                </li>
+            </ul>
+        </div>
 
-    <hr>
+        <div class="contact-card">
+            📬 Let's collaborate: <a href="mailto:jmanyasa@gmail.com">jmanyasa@gmail.com</a>
+        </div>
 
-    <div class="contact">
-        📬 <strong>Connect with me:</strong> <a href="mailto:jmanyasa@gmail.com">jmanyasa@gmail.com</a>
     </div>
 
 </body>
 </html>
+    
+
+
